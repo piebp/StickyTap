@@ -1,0 +1,639 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		52A826752769143300513EA8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A826742769143300513EA8 /* AppDelegate.swift */; };
+		52A826772769143300513EA8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A826762769143300513EA8 /* SceneDelegate.swift */; };
+		52A826792769143300513EA8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A826782769143300513EA8 /* ViewController.swift */; };
+		52A8267C2769143300513EA8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52A8267A2769143300513EA8 /* Main.storyboard */; };
+		52A826812769143500513EA8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52A826802769143500513EA8 /* Assets.xcassets */; };
+		52A826842769143500513EA8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52A826822769143500513EA8 /* LaunchScreen.storyboard */; };
+		52A8268F2769143500513EA8 /* StickyTapTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A8268E2769143500513EA8 /* StickyTapTests.swift */; };
+		52A826992769143500513EA8 /* StickyTapUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A826982769143500513EA8 /* StickyTapUITests.swift */; };
+		52A8269B2769143500513EA8 /* StickyTapUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A8269A2769143500513EA8 /* StickyTapUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		52A8268B2769143500513EA8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 52A826692769143300513EA8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 52A826702769143300513EA8;
+			remoteInfo = StickyTap;
+		};
+		52A826952769143500513EA8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 52A826692769143300513EA8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 52A826702769143300513EA8;
+			remoteInfo = StickyTap;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		52A826712769143300513EA8 /* StickyTap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StickyTap.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		52A826742769143300513EA8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		52A826762769143300513EA8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		52A826782769143300513EA8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		52A8267B2769143300513EA8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		52A826802769143500513EA8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		52A826832769143500513EA8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		52A826852769143500513EA8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		52A8268A2769143500513EA8 /* StickyTapTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StickyTapTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		52A8268E2769143500513EA8 /* StickyTapTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StickyTapTests.swift; sourceTree = "<group>"; };
+		52A826942769143500513EA8 /* StickyTapUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StickyTapUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		52A826982769143500513EA8 /* StickyTapUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StickyTapUITests.swift; sourceTree = "<group>"; };
+		52A8269A2769143500513EA8 /* StickyTapUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StickyTapUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		52A8266E2769143300513EA8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		52A826872769143500513EA8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		52A826912769143500513EA8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		52A826682769143300513EA8 = {
+			isa = PBXGroup;
+			children = (
+				52A826732769143300513EA8 /* StickyTap */,
+				52A8268D2769143500513EA8 /* StickyTapTests */,
+				52A826972769143500513EA8 /* StickyTapUITests */,
+				52A826722769143300513EA8 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		52A826722769143300513EA8 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				52A826712769143300513EA8 /* StickyTap.app */,
+				52A8268A2769143500513EA8 /* StickyTapTests.xctest */,
+				52A826942769143500513EA8 /* StickyTapUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		52A826732769143300513EA8 /* StickyTap */ = {
+			isa = PBXGroup;
+			children = (
+				52A826742769143300513EA8 /* AppDelegate.swift */,
+				52A826762769143300513EA8 /* SceneDelegate.swift */,
+				52A826782769143300513EA8 /* ViewController.swift */,
+				52A8267A2769143300513EA8 /* Main.storyboard */,
+				52A826802769143500513EA8 /* Assets.xcassets */,
+				52A826822769143500513EA8 /* LaunchScreen.storyboard */,
+				52A826852769143500513EA8 /* Info.plist */,
+			);
+			path = StickyTap;
+			sourceTree = "<group>";
+		};
+		52A8268D2769143500513EA8 /* StickyTapTests */ = {
+			isa = PBXGroup;
+			children = (
+				52A8268E2769143500513EA8 /* StickyTapTests.swift */,
+			);
+			path = StickyTapTests;
+			sourceTree = "<group>";
+		};
+		52A826972769143500513EA8 /* StickyTapUITests */ = {
+			isa = PBXGroup;
+			children = (
+				52A826982769143500513EA8 /* StickyTapUITests.swift */,
+				52A8269A2769143500513EA8 /* StickyTapUITestsLaunchTests.swift */,
+			);
+			path = StickyTapUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		52A826702769143300513EA8 /* StickyTap */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 52A8269E2769143500513EA8 /* Build configuration list for PBXNativeTarget "StickyTap" */;
+			buildPhases = (
+				52A8266D2769143300513EA8 /* Sources */,
+				52A8266E2769143300513EA8 /* Frameworks */,
+				52A8266F2769143300513EA8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = StickyTap;
+			productName = StickyTap;
+			productReference = 52A826712769143300513EA8 /* StickyTap.app */;
+			productType = "com.apple.product-type.application";
+		};
+		52A826892769143500513EA8 /* StickyTapTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 52A826A12769143500513EA8 /* Build configuration list for PBXNativeTarget "StickyTapTests" */;
+			buildPhases = (
+				52A826862769143500513EA8 /* Sources */,
+				52A826872769143500513EA8 /* Frameworks */,
+				52A826882769143500513EA8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				52A8268C2769143500513EA8 /* PBXTargetDependency */,
+			);
+			name = StickyTapTests;
+			productName = StickyTapTests;
+			productReference = 52A8268A2769143500513EA8 /* StickyTapTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		52A826932769143500513EA8 /* StickyTapUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 52A826A42769143500513EA8 /* Build configuration list for PBXNativeTarget "StickyTapUITests" */;
+			buildPhases = (
+				52A826902769143500513EA8 /* Sources */,
+				52A826912769143500513EA8 /* Frameworks */,
+				52A826922769143500513EA8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				52A826962769143500513EA8 /* PBXTargetDependency */,
+			);
+			name = StickyTapUITests;
+			productName = StickyTapUITests;
+			productReference = 52A826942769143500513EA8 /* StickyTapUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		52A826692769143300513EA8 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1310;
+				LastUpgradeCheck = 1310;
+				TargetAttributes = {
+					52A826702769143300513EA8 = {
+						CreatedOnToolsVersion = 13.1;
+						LastSwiftMigration = 1330;
+					};
+					52A826892769143500513EA8 = {
+						CreatedOnToolsVersion = 13.1;
+						TestTargetID = 52A826702769143300513EA8;
+					};
+					52A826932769143500513EA8 = {
+						CreatedOnToolsVersion = 13.1;
+						TestTargetID = 52A826702769143300513EA8;
+					};
+				};
+			};
+			buildConfigurationList = 52A8266C2769143300513EA8 /* Build configuration list for PBXProject "StickyTap" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 52A826682769143300513EA8;
+			productRefGroup = 52A826722769143300513EA8 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				52A826702769143300513EA8 /* StickyTap */,
+				52A826892769143500513EA8 /* StickyTapTests */,
+				52A826932769143500513EA8 /* StickyTapUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		52A8266F2769143300513EA8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				52A826842769143500513EA8 /* LaunchScreen.storyboard in Resources */,
+				52A826812769143500513EA8 /* Assets.xcassets in Resources */,
+				52A8267C2769143300513EA8 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		52A826882769143500513EA8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		52A826922769143500513EA8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		52A8266D2769143300513EA8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				52A826792769143300513EA8 /* ViewController.swift in Sources */,
+				52A826752769143300513EA8 /* AppDelegate.swift in Sources */,
+				52A826772769143300513EA8 /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		52A826862769143500513EA8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				52A8268F2769143500513EA8 /* StickyTapTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		52A826902769143500513EA8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				52A826992769143500513EA8 /* StickyTapUITests.swift in Sources */,
+				52A8269B2769143500513EA8 /* StickyTapUITestsLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		52A8268C2769143500513EA8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 52A826702769143300513EA8 /* StickyTap */;
+			targetProxy = 52A8268B2769143500513EA8 /* PBXContainerItemProxy */;
+		};
+		52A826962769143500513EA8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 52A826702769143300513EA8 /* StickyTap */;
+			targetProxy = 52A826952769143500513EA8 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		52A8267A2769143300513EA8 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				52A8267B2769143300513EA8 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		52A826822769143500513EA8 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				52A826832769143500513EA8 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		52A8269C2769143500513EA8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		52A8269D2769143500513EA8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		52A8269F2769143500513EA8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = KKJP7578Q2;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = StickyTap/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.poetos.StickyTap;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		52A826A02769143500513EA8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = KKJP7578Q2;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = StickyTap/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.poetos.StickyTap;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		52A826A22769143500513EA8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = MQMWRY4M3B;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.poetos.StickyTapTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/StickyTap.app/StickyTap";
+			};
+			name = Debug;
+		};
+		52A826A32769143500513EA8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = MQMWRY4M3B;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.poetos.StickyTapTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/StickyTap.app/StickyTap";
+			};
+			name = Release;
+		};
+		52A826A52769143500513EA8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = MQMWRY4M3B;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.poetos.StickyTapUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = StickyTap;
+			};
+			name = Debug;
+		};
+		52A826A62769143500513EA8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = MQMWRY4M3B;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.poetos.StickyTapUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = StickyTap;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		52A8266C2769143300513EA8 /* Build configuration list for PBXProject "StickyTap" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				52A8269C2769143500513EA8 /* Debug */,
+				52A8269D2769143500513EA8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		52A8269E2769143500513EA8 /* Build configuration list for PBXNativeTarget "StickyTap" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				52A8269F2769143500513EA8 /* Debug */,
+				52A826A02769143500513EA8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		52A826A12769143500513EA8 /* Build configuration list for PBXNativeTarget "StickyTapTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				52A826A22769143500513EA8 /* Debug */,
+				52A826A32769143500513EA8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		52A826A42769143500513EA8 /* Build configuration list for PBXNativeTarget "StickyTapUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				52A826A52769143500513EA8 /* Debug */,
+				52A826A62769143500513EA8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 52A826692769143300513EA8 /* Project object */;
+}
