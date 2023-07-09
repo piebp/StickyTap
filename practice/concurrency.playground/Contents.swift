@@ -168,3 +168,19 @@ func priorityInversion() {
         Thread.sleep(forTimeInterval: 5)
     }
 }
+
+
+func just() {
+    let queue = DispatchQueue(label: "sema", attributes: .concurrent)
+    var object = NSObject()
+    queue.async { [weak object] in
+        print("1")
+        print("\(object?.description ?? "no object")")
+    }
+    queue.sync { [weak object] in
+        print("2")
+        print("\(object?.description ?? "no object")")
+    }
+    //thread can call first async block before object release!
+}
+
