@@ -170,17 +170,32 @@ func priorityInversion() {
 }
 
 
+//The case shows that even if queue is going to be released, quqeued tasks will be completed anyway. In spite of deadline time.
 func just() {
-    let queue = DispatchQueue(label: "sema", attributes: .concurrent)
+    class Worker {
+        let queue = DispatchQueue(label: "sema", attributes: .concurrent)
+        
+        func doWork(_ task: @escaping () -> Void) {
+            queue.asyncAfter(deadline: .now() + 4, execute: task)
+        }
+    }
+    
     var object = NSObject()
-    queue.async { [weak object] in
+    let worker = Worker()
+    worker.doWork { [weak object, weak worker] in
         print("1")
         print("\(object?.description ?? "no object")")
+        Thread.sleep(forTimeInterval: 1)
+        worker?.doWork {
+            print("2")
+        }
+        DispatchQueue.main.sync {
+            print("3")
+        }
     }
-    queue.sync { [weak object] in
-        print("2")
-        print("\(object?.description ?? "no object")")
-    }
+//    queue.sync { [weak object] in
+//        print("2")
+//        print("\(object?.description ?? "no object")")
+//    }
     //thread can call first async block before object release!
 }
-
