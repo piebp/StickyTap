@@ -170,7 +170,7 @@ func priorityInversion() {
 }
 
 
-//The case shows that even if queue is going to be released, quqeued tasks will be completed anyway. In spite of deadline time.
+//The case shows that even if queue is going to be released, quqeued tasks will be completed anyway. It doesn't depend on deadline time.
 func just() {
     class Worker {
         let queue = DispatchQueue(label: "sema", attributes: .concurrent)
@@ -199,3 +199,114 @@ func just() {
 //    }
     //thread can call first async block before object release!
 }
+
+//You can wrap up a unit of work, or task, and execute it sometime in the future, and then easily submit that unit of work more than once.
+func blockOperationCase() {
+    //operations have states isready, isexxecuting, iscancelled, isfinished
+    
+    // block operations can manage multiple tasks and finish when all passed tasks are completed like a group
+    let sampleOperations = BlockOperation()
+    for text in ["one", "two", "three"] {
+        sampleOperations.addExecutionBlock {
+            print(text)
+        }
+    }
+    
+    sampleOperations.completionBlock = {
+        print("all tasks copleted")
+    }
+    
+    //runs concurrently
+    sampleOperations.start()
+}
+
+func operationQueues() {
+    
+    class MyOperation: Operation {
+        
+        override func start() {
+            super.start()
+            print("started")
+        }
+        
+        override func main() {
+            super.main()
+            print("main")
+        }
+    }
+    
+    // op qu allows pass ready ops, closure and array of ops
+    let opQueue = OperationQueue()
+    opQueue.qualityOfService = .utility
+    opQueue.maxConcurrentOperationCount = 1 // serial
+    opQueue.maxConcurrentOperationCount = 2
+    
+    let operation = MyOperation()
+    opQueue.addOperations([operation], waitUntilFinished: false)
+}
+
+func asyncOperation() {
+    // if operation performs async task (e g networking) then need to notify the opertion when task is finished
+    // state props are not settable but operation applies kvo
+    
+    class AsyncOperation: Operation {
+        enum State: String {
+           case ready, executing, finished
+            
+           fileprivate var keyPath: String {
+             return "is\(rawValue.capitalized)"
+           }
+       }
+        
+        var state = State.ready {
+            willSet {
+                willChangeValue(forKey: newValue.keyPath)
+                willChangeValue(forKey: state.keyPath)
+            }
+            didSet {
+                didChangeValue(forKey: oldValue.keyPath)
+                didChangeValue(forKey: state.keyPath)
+            }
+        }
+        
+        override var isReady: Bool {
+          return super.isReady && state == .ready
+        }
+        
+        override var isExecuting: Bool {
+          return state == .executing
+        }
+        
+        override var isFinished: Bool {
+          return state == .finished
+        }
+        
+        override var isAsynchronous: Bool {
+            return true
+        }
+        
+        override func start() {
+          main()
+          state = .executing
+        }
+    }
+    
+    class MockAsyncOperation: AsyncOperation {
+        
+        override func main() {
+            DispatchQueue.global(qos: .utility).async { [weak self] in
+                guard let self = self else {
+                    return
+                }
+                defer { self.state = .finished }
+                Thread.sleep(forTimeInterval: 3)
+                print("job completed")
+            }
+        }
+    }
+    
+    let operation = MockAsyncOperation()
+    operation.start()
+}
+
+
