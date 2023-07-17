@@ -448,19 +448,25 @@ enum EdgeType {
     case undirected
 }
 
-struct Edge<T> {
+
+struct Edge<T>: Comparable {
     var type: EdgeType
     var from: Vertex<T>
     var to: Vertex<T>
+    var weight: Int? = nil
+    
+    static func < (lhs: Edge<T>, rhs: Edge<T>) -> Bool {
+        return (lhs.weight ?? 0) < (rhs.weight) ?? 0
+    }
 }
 
 protocol Graph {
     associatedtype Element
     
     
-    mutating func addDirectedEdge(from: Vertex<Element>, to: Vertex<Element>)
-    mutating func addUndirectedEdge(from: Vertex<Element>, to: Vertex<Element>)
-    mutating func addEdge(type: EdgeType, from: Vertex<Element>, to: Vertex<Element>)
+    mutating func addDirectedEdge(from: Vertex<Element>, to: Vertex<Element>, _ weight: Int?)
+    mutating func addUndirectedEdge(from: Vertex<Element>, to: Vertex<Element>, _ weight: Int?)
+    mutating func addEdge(type: EdgeType, from: Vertex<Element>, to: Vertex<Element>, _ weight: Int?)
     mutating func remove(_ vertex: Vertex<Element>)
     mutating func append(_ vertex: Vertex<Element>)
 }
@@ -474,50 +480,40 @@ struct AdjacencyList<Element>: Graph {
     }
     
     mutating
-    func addDirectedEdge(from: Vertex<Element>, to: Vertex<Element>) {
-        guard adjacency.keys.contains(from) && adjacency.keys.contains(to) else {
-            return
-        }
-        let edge = Edge(type: .directed, from: from, to: to)
-        safelyConnect(edge, to: from)
+    func addDirectedEdge(from: Vertex<Element>, to: Vertex<Element>, _ weight: Int?=nil) {
+        addEdge(type: .directed, from: from, to: to, weight)
     }
     
     mutating
-    func addUndirectedEdge(from: Vertex<Element>, to: Vertex<Element>) {
-        guard adjacency.keys.contains(from) && adjacency.keys.contains(to) else {
-            return
-        }
-        let edge = Edge(type: .undirected, from: from, to: to)
-        safelyConnect(edge, to: from)
-        safelyConnect(edge, to: to)
+    func addUndirectedEdge(from: Vertex<Element>, to: Vertex<Element>, _ weight: Int?=nil) {
+        addEdge(type: .undirected, from: from, to: to, weight)
     }
     
     mutating
-    func addEdge(type: EdgeType, from: Vertex<Element>, to: Vertex<Element>) {
+    func addEdge(type: EdgeType, from: Vertex<Element>, to: Vertex<Element>, _ weight: Int?=nil) {
         guard adjacency.keys.contains(from) && adjacency.keys.contains(to) else {
             return
         }
-        let edge = Edge(type: type, from: from, to: to)
+        let edge = Edge(type: type, from: from, to: to, weight: weight)
         safelyConnect(edge, to: from)
         if type == .undirected {
             safelyConnect(edge, to: to)
         }
     }
     
-    @discardableResult
-    mutating
-    func createVertex(_ value: Element) -> Vertex<Element> {
-       let index = adjacency.keys.count
-       let vertex = Vertex(index, value)
-       adjacency[vertex] = []
-       return vertex
-    }
-    
     func edges(from vertex: Vertex<Element>) -> [Edge<Element>] {
         return adjacency[vertex] ?? []
     }
-        
-         
+    
+    @discardableResult
+    mutating
+    func createVertex(_ value: Element) -> Vertex<Element> {
+        let index = adjacency.keys.count
+        let vertex = Vertex(index, value)
+        adjacency[vertex] = []
+        return vertex
+    }
+      
     mutating
     func remove(_ vertex: Vertex<Element>) {
         adjacency[vertex] = nil
@@ -598,16 +594,15 @@ extension AdjacencyList {
 }
 
 struct ArrayQueue<Element>: Queue, CustomStringConvertible {
-  
+    
     var elements: [Element]
     
     init(_ elements: [Element]=[]) {
         self.elements = elements
     }
     
-    mutating func enqueue(_ element: Element) -> Bool {
+    mutating func enqueue(_ element: Element) {
         elements.append(element)
-        return true
     }
     
     @discardableResult
@@ -621,33 +616,69 @@ struct ArrayQueue<Element>: Queue, CustomStringConvertible {
     func peek() -> Element? {
         return elements.first
     }
- 
-    func isEmpty() -> Bool {
-        return elements.isEmpty
-    }
-    
     
     var description: String {
         return "\(elements)"
     }
 }
 
-func testGraph() {
+extension AdjacencyList {
     
+    func dijkstraPath(from vertex: Vertex<Element>) -> [Vertex<Element>: (Vertex<Element>, Int)] {
+        
+        var result: [Vertex<Element>: (Vertex<Element>, Int)] = [:]
+        
+        var current: Vertex<Element> = vertex
+        var previous: Vertex<Element> = vertex
+        
+        //var edge: Edge<Element>?
+        var queue = PriorityQueue<Edge<Element>>([], >)
+        
+        edges(from: current).forEach {
+            queue.enqueue($0)
+        }
+        
+        while let edge = queue.dequeue() {
+        
+             let weight = (edge.weight ?? 0)
+            
+            // sum weights
+            
+            //weight shouldnt be nil
+            if result[current] == nil ||
+                result[current]!.1 > weight {
+                  result[current] = (previous, weight)
+            }
+            
+            previous = current
+            current = edge.to
+            
+            edges(from: current).forEach {
+                queue.enqueue($0)
+            }
+        }
+        
+        return result
+    }
+}
+
+
+func testGraph() {
     var graph = AdjacencyList<String>()
     let vertex1 = Vertex(0, "Zero")
-    let vertex2 = Vertex(1, "Zero")
-    let vertex3 = Vertex(2, "Zero")
+    let vertex2 = Vertex(1, "One")
+    let vertex3 = Vertex(2, "Two")
     graph.append(vertex1)
     graph.append(vertex2)
     graph.append(vertex3)
-    graph.addUndirectedEdge(from: vertex1, to: vertex2)
-    graph.addDirectedEdge(from: vertex1, to: vertex3)
+    graph.addDirectedEdge(from: vertex1, to: vertex2, 2)
+    graph.addDirectedEdge(from: vertex1, to: vertex3, 1)
+
+    var vertex = graph.createVertex("Three")
+    graph.addDirectedEdge(from: vertex2, to: vertex, 3)
+    graph.addDirectedEdge(from: vertex, to: vertex3, 2)
     
-    var vertex = graph.createVertex("New")
-    graph.addUndirectedEdge(from: vertex2, to: vertex)
-    graph.addUndirectedEdge(from: vertex, to: vertex3)
-    
+    /*
     vertex = graph.createVertex("New")
     graph.addUndirectedEdge(from: vertex, to: vertex3)
     
@@ -656,9 +687,13 @@ func testGraph() {
     
     vertex = graph.createVertex("New")
     graph.addUndirectedEdge(from: vertex, to: vertex3)
+    */
     
     print(graph)
     print(graph.breadthFirstSearch(from: vertex1))
+    
+    let dPath = graph.dijkstraPath(from: vertex1)
+    print(dPath)
     
     var queue = ArrayQueue([1, 2])
     queue.enqueue(4)
@@ -666,9 +701,5 @@ func testGraph() {
     assert(queue.elements == [1, 2, 4, 5])
     queue.dequeue()
     assert(queue.elements == [2, 4, 5])
-    
-    [1, 2][0...]
-    
 }
 testGraph()
-
